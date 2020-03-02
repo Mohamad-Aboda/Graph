@@ -1,0 +1,21 @@
+#include <vector>
+#include <iostream>
+using namespace std;
+// n for nodes 
+// m for edges
+int n, m;
+vector<vector<int> >v;
+int main() {
+    cin >> n >> m;
+    v.clear();
+    v.resize(n);
+    for (int i = 0; i < m; i++) {
+        int a, b; cin >> a >> b;
+        // for weighted graph
+        v[a].push_back(b);
+        // for unweighed graph
+        v[b].push_back(a);
+    }
+    
+    return 0;
+}
