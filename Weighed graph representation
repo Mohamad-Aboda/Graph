@@ -1,0 +1,21 @@
+#include <vector>
+#include <iostream>
+using namespace std;
+// n for nodes 
+// m for edges
+int n, m;
+vector<vector<pair<int, int>>>v;
+int main() {
+    v.clear();
+    v.resize(n);
+    cin >> n >> m;
+    for (int i = 0; i < m; i++) {
+        int a, b, c;
+        cin >> a >> b >> c;
+        v[a].push_back(make_pair(b, c)); // a : b with cost c
+        // for un directed graph
+        v[b].push_back(make_pair(a, c)); // b : a with cost c
+    }
+
+    return 0;
+}
